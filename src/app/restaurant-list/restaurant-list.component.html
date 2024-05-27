@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <button class="btn btn-primary mb-3" (click)="navigateToAddRestaurant()">Add New Restaurant</button>
+  <div class="card mb-3" *ngFor="let restaurant of restaurants" (click)="navigateToDetailPage(restaurant.id)">
+    <div class="card-body">
+      <h5 class="card-title">{{ restaurant.name }}</h5>
+      <div class="card-text"><small class="text-muted">Average Rating: {{ restaurant.averageRating.toFixed(1) }}</small>
+      </div>
+      <p>
+      <app-star-rating [(rating)]="restaurant.averageRating" readonly="true"></app-star-rating>
+      </p>
+      <button class="btn btn-warning me-2" (click)="navigateToEditPage(restaurant.id); $event.stopPropagation()">Edit</button>
+      <button class="btn btn-danger" (click)="deleteRestaurant(restaurant.id); $event.stopPropagation()">Delete</button>
+    </div>
+  </div>
+</div>

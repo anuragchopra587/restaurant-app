@@ -1,0 +1,22 @@
+<div class="container mt-5">
+  <h2>Edit Restaurant</h2>
+  <form (ngSubmit)="updateRestaurant()" class="mt-4">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name:</label>
+      <input id="name" required [(ngModel)]="restaurant.name" name="name" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="address" class="form-label">Address:</label>
+      <input id="address" [(ngModel)]="restaurant.address" name="address" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description:</label>
+      <textarea id="description" [(ngModel)]="restaurant.description" name="description" class="form-control" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="hours" class="form-label">Hours:</label>
+      <input id="hours" [(ngModel)]="restaurant.hours" name="hours" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Update Restaurant</button>
+  </form>
+</div>
